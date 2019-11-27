@@ -307,10 +307,10 @@
     "@chaingun/types" "^0.0.1"
     reconnecting-websocket "^4.2.0"
 
-"@chaingun/client@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@chaingun/client/-/client-0.0.23.tgz#abada8a8fbc9b86aeb54aa46a7bae697ab337b51"
-  integrity sha512-T49NRHHayeu8PoZEMr0tTiCYDqUDfrUbptMTc7wYehaUScDj4Ipn+/Yn654GxjAjzwN5mv6eHHtk5qtGVLzfQA==
+"@chaingun/client@^0.0.24":
+  version "0.0.24"
+  resolved "https://registry.yarnpkg.com/@chaingun/client/-/client-0.0.24.tgz#4bb373daab8923a7d26dc24e63ab10c0e7fd331e"
+  integrity sha512-nWeUtpy+xTwU1aV7hz8QkuS7S4hB+ATFuAXen1kD9TyGAwW/s+KOjUMeeMUsU/4xkzTSM5O4sJGS/3BGb8FpFA==
   dependencies:
     "@chaingun/crdt" "^0.0.2"
     "@chaingun/types" "^0.0.3"
@@ -330,12 +330,12 @@
   dependencies:
     "@chaingun/types" "^0.0.3"
 
-"@chaingun/sea-client@^0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@chaingun/sea-client/-/sea-client-0.0.23.tgz#0944099d9584c8ee52564569dd6cbf437fb40317"
-  integrity sha512-8z2fFL5WylUWMZGLHb0HfHSYSQwAih+dE8FOZT/eAqNiaeRWlu+3K5oozB3DsQYRl4tlCZZ6uawHa7TWTZ4FIw==
+"@chaingun/sea-client@^0.0.25":
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/@chaingun/sea-client/-/sea-client-0.0.25.tgz#611c3b34d2af52c07beac7177498faee00034030"
+  integrity sha512-vpLM/bRfsG9r2uhU8Amm89h+Gq1tIbeAuBNg4RxILq0dEAsGiP1V1R3sxIvd+Mff1rWdZfZmBv2MFfCniiPU1g==
   dependencies:
-    "@chaingun/client" "^0.0.23"
+    "@chaingun/client" "^0.0.24"
     "@chaingun/sear" "^0.0.24"
 
 "@chaingun/sear@^0.0.24":
