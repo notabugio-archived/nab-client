@@ -1,6 +1,6 @@
 {
   "name": "@notabug/client",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shared client implementation for notabug.io",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -13,6 +13,7 @@
     "build": "run-s clean && run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
+    "start": "node -r dotenv/config build/main/main.js",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
@@ -51,9 +52,14 @@
     "node": ">=8.9"
   },
   "dependencies": {
-    "@chaingun/sea-client": "^0.0.25",
+    "@chaingun/sea-client": "0.0.26",
     "@chaingun/socketcluster-connector": "^0.0.7",
-    "@notabug/peer": "^0.37.0"
+    "@lingua-webca/chaingun": "^0.0.1",
+    "@lingua-webca/core": "^0.0.1",
+    "@notabug/peer": "^0.38.0",
+    "dotenv": "^8.2.0",
+    "query-string": "^6.9.0",
+    "uri-js": "^4.2.2"
   },
   "devDependencies": {
     "@bitjson/npm-scripts-info": "^1.0.0",
@@ -89,7 +95,8 @@
     }
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "semi": false
   },
   "nyc": {
     "extends": "@istanbuljs/nyc-config-typescript",
