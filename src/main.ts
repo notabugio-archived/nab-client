@@ -1,15 +1,11 @@
 import { ChainGunLinguaStore } from '@lingua-webca/chaingun'
-import { store, webca } from '@lingua-webca/core'
-import { Config } from '@notabug/peer'
-import { NotabugLinguaStore } from './NotabugLinguaStore'
+import { HttpStore, store, webca } from '@lingua-webca/core'
+import { NotabugLinguaStore } from './Lingua'
+// import { NotabugScribeQueue } from './NotabugScribeQueue'
 
-// This is a WIP test/demo of lingua-webca
+// This is a WIP test/demo of lingua-webca  does not do anything useful yet
 
+store.use('https://', HttpStore.store)
+store.use('http://', HttpStore.store)
 store.use('gun://', ChainGunLinguaStore.create())
 store.use('notabug://', NotabugLinguaStore.create(webca))
-
-webca
-  .get(`notabug://${Config.indexer}@notabug.io/t/all/new/things?limit=5`)
-  .then((res: any) => {
-    console.log('res', JSON.stringify(res, null, 2))
-  })

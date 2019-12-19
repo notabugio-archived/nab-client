@@ -3,10 +3,11 @@ import {
   GunGraph,
   GunGraphAdapter,
   GunGraphConnector,
-  GunGraphConnectorFromAdapter
+  GunGraphConnectorFromAdapter,
+  pubFromSoul,
+  unpackNode
 } from '@chaingun/sea-client'
 // tslint:disable-next-line: no-implicit-dependencies
-import { pubFromSoul, unpackNode } from '@chaingun/sear'
 import SocketClusterGraphConnector from '@chaingun/socketcluster-connector'
 import { Query } from '@notabug/peer'
 // tslint:disable-next-line: no-implicit-dependencies no-submodule-imports
@@ -25,12 +26,15 @@ const DEFAULT_OPTS: Opts = {
     autoReconnect: true,
     hostname: process.env.GUN_SC_HOST || '127.0.0.1',
     path: process.env.GUN_SC_PATH || '/socketcluster',
-    port: parseInt(process.env.GUN_SC_PORT || '', 10) || 4444
+    port: parseInt(process.env.GUN_SC_PORT || '', 10) || 4444,
+    secure: process.env.GUN_SC_CONNECTION
+      ? process.env.GUN_SC_CONNECTION === 'secure'
+      : parseInt(process.env.GUN_SC_PORT || '', 10) === 443
   }
 }
 
 export class NotabugClient extends ChainGunSeaClient {
-  protected readonly socket: SocketClusterGraphConnector
+  public readonly socket: SocketClusterGraphConnector
   protected readonly dbAdapter?: GunGraphAdapter
   protected readonly dbConnector:
     | GunGraphConnector
