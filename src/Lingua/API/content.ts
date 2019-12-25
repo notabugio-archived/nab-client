@@ -1,4 +1,4 @@
-import { addMissingState, unpackNode } from '@chaingun/sea-client'
+import { addMissingState, GunGraphData, unpackNode } from '@chaingun/sea-client'
 import {
   ExpressLikeStore,
   LinguaWebcaClient,
@@ -68,6 +68,58 @@ export function contentApi(
     const data = yaml.safeLoad(body)
 
     res.json(data)
+  })
+
+  app.get(`/content/user/:authorId/lists/:name/:key`, async (req, res) => {
+    const { authorId, key, name } = req.params
+    const soul =
+      Schema.AuthorThingList.route.reverse({
+        authorId,
+        name
+      }) || ''
+
+    const response = await webca.get(
+      `gun://${host}/key/${key}/from_node/${soul}`
+    )
+
+    const node = response ? unpackNode(response) : null
+    const thingSoul = (node && node[key] && node[key]['#']) || ''
+    const { thingId = '' } = Schema.Thing.route.match(thingSoul) || {}
+
+    res.json(thingId)
+  })
+
+  app.put(`/content/user/:authorId/lists/:name/:key`, async (req, res) => {
+    const { authorId, key, name } = req.params
+    const thingId = req.body
+
+    const soul =
+      Schema.AuthorThingList.route.reverse({
+        authorId,
+        name
+      }) || ''
+    const thingSoul = Schema.Thing.route.reverse({ thingId }) || ''
+
+    const graphData: GunGraphData = {
+      [soul]: {
+        _: {
+          '#': soul,
+          '>': {}
+        },
+        [key]: thingSoul
+          ? {
+              '#': thingSoul
+            }
+          : null
+      }
+    }
+
+    const response = await webca.patch(
+      `gun://${host}/`,
+      addMissingState(graphData)
+    )
+
+    res.json(response)
   })
 
   app.patch(`/content/user/:authorId/lists/:name`, async (req, res) => {

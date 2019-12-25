@@ -74,6 +74,17 @@ export function createSpecificNabStore(
     }
   })
 
+  app.put(`/me/*rest`, async (req, res) => {
+    const { rest } = req.params
+    if (!user) {
+      throw new Error('Not logged in')
+    } else {
+      res.json(
+        await app.client.put(`/content/user/${user.pub}/${rest}`, req.body)
+      )
+    }
+  })
+
   nodeApi(app, indexer, host, webca)
   mirrorApi(app, indexer, host, webca)
   contentApi(app, indexer, host, webca)

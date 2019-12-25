@@ -19,14 +19,14 @@ export function submitApi(
       const {
         author = '',
         body = '',
-        title = '',
-        url = '',
+        title,
+        url,
         timestamp = new Date().getTime(),
         opId = '',
         replyToId = ''
       } = req.body
 
-      const data = {
+      const data: any = {
         author,
         authorId,
         body,
@@ -34,9 +34,15 @@ export function submitApi(
         opId,
         replyToId,
         timestamp,
-        title,
-        topic,
-        url
+        topic
+      }
+
+      if (title) {
+        data.title = title
+      }
+
+      if (url) {
+        data.url = url
       }
 
       const originalHash = objHash(data)
@@ -116,7 +122,7 @@ export function submitApi(
         [thingSoul]: thingNode,
         [dataSoul]: thingDataNode
       })
-      
+
       await webca.patch(`gun://${host}/`, graphData)
 
       res.json(thingId)
