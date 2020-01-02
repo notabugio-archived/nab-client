@@ -330,12 +330,14 @@
   dependencies:
     "@chaingun/types" "^0.0.3"
 
-"@chaingun/federation-adapter@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@chaingun/federation-adapter/-/federation-adapter-0.0.4.tgz#08a36a498d8bd6f2a257793e38f9cd45c63423d3"
-  integrity sha512-fhWxcTI+ZCLSZcGwp2xEPBT8HqOBV/fdPoQHYQdFb3hWytGUIvQSGxJjO+HdaQ4iNaecMVh7szCxzLLJwS4ETA==
+"@chaingun/federation-adapter@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@chaingun/federation-adapter/-/federation-adapter-0.0.5.tgz#396caeb8849db205daf4e0f035ac9f5093f1306d"
+  integrity sha512-gpTU6lD44StKxOOo7elFhFTtF/SV/7nadt8GN55IKKwJA73pkGfDpiO8fI1/ZIAlGUjwmruQiKd3fI8dNG8EDw==
   dependencies:
     "@chaingun/types" "^0.0.4"
+    "@types/uuid" "^3.4.6"
+    uuid "^3.3.3"
 
 "@chaingun/http-adapter@^0.5.1":
   version "0.5.1"
@@ -474,10 +476,10 @@
     ramda "^0.26.1"
     zalgo-promise "1.0.28"
 
-"@notabug/peer@^0.38.0":
-  version "0.38.0"
-  resolved "https://registry.yarnpkg.com/@notabug/peer/-/peer-0.38.0.tgz#72324d9abacd3be640885838cd7a28d4c4ae8960"
-  integrity sha512-3uxirnbU+GKTlb3QtLwSuGG842uh80ZYbfb3GdCpKWD+eZmd8GvEbltTbGAVkRD/ERzc6fPwtg+H7wB4GsCQuw==
+"@notabug/peer@^0.41.2":
+  version "0.41.2"
+  resolved "https://registry.yarnpkg.com/@notabug/peer/-/peer-0.41.2.tgz#81c2f6201ad357c82438134482c7cd473800f931"
+  integrity sha512-0eFw/fG1LT0R5qvq4J49S9lwfXyjkSquDRgUkzBdhZp/6y6+aav2nT85dyJar8krmncgHAeljwoXRHNJfPM6hg==
   dependencies:
     "@notabug/gun-scope" "^0.10.2"
     argon2 "^0.21.0"
@@ -711,6 +713,13 @@
     "@types/sc-auth" "*"
     "@types/sc-broker-cluster" "*"
     "@types/socketcluster-server" "*"
+
+"@types/uuid@^3.4.6":
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-3.4.6.tgz#d2c4c48eb85a757bf2927f75f939942d521e3016"
+  integrity sha512-cCdlC/1kGEZdEglzOieLDYBxHsvEOIg7kp/2FYyVR9Pxakq+Qf/inL3RKQ+PA8gOlI/NnL+fXmQH12nwcGzsHw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/window-or-global@^1.0.0":
   version "1.0.0"
@@ -5141,7 +5150,7 @@ uuid@3.2.1:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
   integrity sha512-jZnMwlb9Iku/O3smGWvZhauCf6cvvpKi4BKRiliS3cxnI+Gz9j5MEpTz2UFuXiKPJocb7gnsLHwiS05ige5BEA==
 
-uuid@^3.3.2:
+uuid@^3.3.2, uuid@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
