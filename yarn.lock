@@ -330,12 +330,12 @@
   dependencies:
     "@chaingun/types" "^0.0.3"
 
-"@chaingun/federation-adapter@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@chaingun/federation-adapter/-/federation-adapter-0.0.5.tgz#396caeb8849db205daf4e0f035ac9f5093f1306d"
-  integrity sha512-gpTU6lD44StKxOOo7elFhFTtF/SV/7nadt8GN55IKKwJA73pkGfDpiO8fI1/ZIAlGUjwmruQiKd3fI8dNG8EDw==
+"@chaingun/federation-adapter@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@chaingun/federation-adapter/-/federation-adapter-0.0.7.tgz#5bae5b989e84d96aa37b9b0bfd548bba873edc50"
+  integrity sha512-/o4koZs9nMI/YzajkG4DM+VsFEiGFjwPyABvI+STyFRWQo2ZY0bwETbnscVKS+uopE3QkChSzC0dhwMRCx3+lw==
   dependencies:
-    "@chaingun/types" "^0.0.4"
+    "@chaingun/types" "^0.0.5"
     "@types/uuid" "^3.4.6"
     uuid "^3.3.3"
 
@@ -403,6 +403,11 @@
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@chaingun/types/-/types-0.0.4.tgz#825ab52e233101bb3246351fea4042b017dc8b87"
   integrity sha512-IHL4/kwAEogAUrGUghAKpCbeaK3LYRtZUPsb8Ip0ByAZ9wiTws8DnmW347fe+CNPIEPfK9TguGYVLrdXT1DHiw==
+
+"@chaingun/types@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@chaingun/types/-/types-0.0.5.tgz#d61b59a8d4a25dec2ba20c66ed1ee1aefb7c889f"
+  integrity sha512-T0lefPyxqVWdMsOFKfld5hEPwf3UyuWBNGsmCU45dygrjBmo2pibVLE+DkwQUIpafOE/vg434p+aqs1DkCHIDQ==
 
 "@concordance/react@^2.0.0":
   version "2.0.0"
